@@ -25,7 +25,7 @@ async function getCategoryById(id) {
 }
 async function addCategory(name) {
   const result = await client.query(
-    "INSERT INTO categories (name) VALUES ($1)",
+    "INSERT INTO CATEGORIES (name) VALUES ($1)",
     [name]
   );
   return result.rows[0];
