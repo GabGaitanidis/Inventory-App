@@ -1,0 +1,21 @@
+const express = require("express");
+const router = express.Router();
+const controls = require("../controllers/controls");
+router.get("/", controls.displayIndex);
+router.get("/categories", controls.displayGenres);
+router.get("/category/:id", controls.displayEachGenre);
+router.get("/addCategory", controls.displayFormCat);
+router.post("/addCategory", controls.handleAddCategory);
+router.get("/addItem", controls.numOfCategories);
+router.post("/addItem", controls.handleAddItem);
+router.get("/item/:itemId", controls.handleGetUpdate);
+router.post("/item/:itemId", controls.handlePostUpdate);
+router.post("/item/:id/delete", controls.handleDeleteItem);
+router.post("/category/:id/delete", controls.handleDeleteCategory);
+router.get("/categoryEdit/:catId", controls.displayEditCat);
+router.post("/categoryEdit/:catId", controls.editCatPost);
+router.get("/category/:id/delete", (req, res) => {
+  const { id } = req.params;
+  res.render("password", { id });
+});
+module.exports = router;

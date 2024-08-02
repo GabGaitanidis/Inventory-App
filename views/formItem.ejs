@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="add-item-container">
+      <h1>Add Item</h1>
+      <form action="/addItem" method="post">
+        <input
+          type="text"
+          name="itemName"
+          id=""
+          placeholder="Item..."
+          class="item-input"
+        />
+        <div>
+          <div class="center">
+            <div class="select">
+              <select name="categoryId" id="">
+                <% items.forEach(item => { %>
+                <option value="<%= item.id %>"><%= item.name %></option>
+                <% }) %>
+              </select>
+            </div>
+            <button type="submit" class="addBtn">Add item</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

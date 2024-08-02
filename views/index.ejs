@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/box.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/box.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Inventory App</title>
+  </head>
+  <body>
+    <%- include('nav') %>
+    <div class="container">
+      <div class="categories section">
+        <h1>Categories</h1>
+
+        <% categories.forEach(cat => { %>
+        <a href="/category/<%=cat.id %>" class="category-link"
+          ><%= cat.name %></a
+        >
+        <% }) %>
+      </div>
+      <div class="items section">
+        <h1>All Items</h1>
+        <% items.forEach(item => { %>
+        <div class="item">
+          <div class="names">
+            <p><b><%= item.name %> </b> &nbsp; <%= item.category %></p>
+          </div>
+          <div class="crud-btns">
+            <a href="/item/<%= item.id %>"
+              ><img src="/edit.png" alt="" height="50" width="50" class="editA"
+            /></a>
+            <form action="/item/<%= item.id %>/delete" method="post">
+              <button type="submit" class="btn">
+                <img src="/delete.png" alt="" height="50" width="50" />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
