@@ -1,7 +1,7 @@
 require("dotenv").config();
-const { Pool } = require("pg");
+const { Client } = require("pg");
 
-const client = new Pool({
+const client = new Client({
   connectionString: process.env.DTURL + "?sslmode=require",
 });
 
