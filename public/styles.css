@@ -100,6 +100,7 @@ select {
 select::-ms-expand {
   display: none;
 }
+
 .center {
   text-align: center;
 }
@@ -121,10 +122,14 @@ select::-ms-expand {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  border: 1px solid;
 }
 .crud-container form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .crud-container input {
   font-size: 25px;
@@ -132,7 +137,9 @@ select::-ms-expand {
   border-radius: 15px;
   border: 2px solid #4c4ca3;
   background-color: #1f1f5a;
+  width: 90%;
 }
+
 .categories-items {
   padding: 10px;
 }
@@ -294,5 +301,8 @@ select::-ms-expand {
   .names {
     display: flex;
     text-align: center;
+  }
+  .select {
+    width: 100%;
   }
 }
